@@ -40,25 +40,25 @@ int main(int argc, char * argv[]) {
     Image img2;
     Image img3;
     
-    //img2.getX(300.0);
-    //img2.getY(150.0);
+    img2.getX(300.0);
+    img2.getY(150.0);
     img3.getX(0.0);
     img3.getY(150.0);
     
     img1.setSpeed(100, 100);
-    img2.setSpeed(100, 0);
+    img2.setSpeed(0, 100);
     img3.setSpeed(100, 0);
     
-    img1.load("tinyfin.bmp", 150, 150);
     img2.load("penguin.bmp", 150, 150);
+    img1.load("tinyfin.bmp", 150, 150);
     img3.load("wisp.bmp", 150, 150);
     
     int num_frames = duration_in_seconds * frames_per_second;
     for (int i = 0; i < num_frames; ++i) {
         double dt = 1.0 / frames_per_second;
         frame.clear();
-        img1.draw();
         img2.draw();
+        img1.draw();
         img3.draw();
         img1.update(dt);
         img2.update(dt);
